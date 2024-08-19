@@ -23,7 +23,7 @@ const Sliderabout = ({ refs }: any) => {
         <Animtext
           text="A Witty, and Upbeat place"
           refs={refs}
-          lineHeaight={0.8}
+          lineHeight={0.8}
           size="11vw"
           color="#1c1c1c"
         />

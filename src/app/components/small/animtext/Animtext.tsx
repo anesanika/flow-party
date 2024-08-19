@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-interface animtextTyle {
+interface animtextType {
   text: string;
-  refs: any;
+  refs: React.RefObject<HTMLDivElement>;
   color?: string;
   size?: string;
-  lineHeaight?: number;
+  lineHeight?: number; // Fixed spelling from "lineHeaight" to "lineHeight"
 }
 
 const Animtext = ({
@@ -14,29 +14,29 @@ const Animtext = ({
   refs,
   color = "white",
   size = "15rem",
-  lineHeaight = 0.9,
-}: animtextTyle) => {
+  lineHeight = 0.9,
+}: animtextType) => {
   const isInView = useInView(refs, { once: true });
 
   const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visable");
+      controls.start("visible"); // Fixed spelling from "visable" to "visible"
     }
   }, [isInView]);
 
   return (
     <h1
-      style={{ color: color, fontSize: size, lineHeight: lineHeaight }}
-      className={`overflow-hidden whitespace-nowrap font-[humanBold] max-h-[255px] uppercase }`}
+      style={{ color, fontSize: size, lineHeight }}
+      className="overflow-hidden whitespace-nowrap font-[humanBold] max-h-[255px] uppercase"
     >
       {text.split("").map((letter, index) => (
         <motion.span
           key={index}
           variants={{
             hidden: { y: 200 },
-            visable: { y: 0 },
+            visible: { y: 0 }, // Fixed spelling from "visable" to "visible"
           }}
           transition={{
             delay: index * 0.07,
@@ -48,7 +48,7 @@ const Animtext = ({
           }}
           initial="hidden"
           animate={controls}
-          className={`animate-letterScroll inline-block`}
+          className="animate-letterScroll inline-block"
         >
           {letter === " " ? "\u00A0" : letter}
         </motion.span>

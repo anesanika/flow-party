@@ -15,7 +15,7 @@ const About = () => {
 
   useEffect(() => {
     if (inView) {
-      animation.start("visable");
+      animation.start("visible"); // Fixed spelling from "visable" to "visible"
     }
   }, [inView]);
 
@@ -24,18 +24,8 @@ const About = () => {
       <div className="content">
         <div className="w-full flex justify-between">
           <div>
-            <Animtext
-              refs={ref}
-              size="18vw"
-              text={"What is the"}
-              color="black"
-            />
-            <Animtext
-              refs={ref}
-              size="18vw"
-              text={"Flow party"}
-              color="black"
-            />
+            <Animtext refs={ref} size="18vw" text="What is the" color="black" />
+            <Animtext refs={ref} size="18vw" text="Flow party" color="black" />
           </div>
           <div className="translate-y-[200px] max-[1280px]:hidden">
             <Textsvg />
@@ -56,7 +46,7 @@ const About = () => {
             className="w-96 font-light text-lg max-md:text-[3vw] text-center max-md:py-10 max-md:mt-10"
             variants={{
               hidden: { opacity: 0 },
-              visable: { opacity: 1 },
+              visible: { opacity: 1 }, // Fixed spelling from "visable" to "visible"
             }}
             initial="hidden"
             animate={animation}
@@ -65,8 +55,8 @@ const About = () => {
             The Flow Party is a safe, inclusive, and fun space for website
             developers and designers. We are an upbeat community, not for the
             faint of heart. We work hard but always in a Party Mood. Whether
-            we're coding up a storm or taking a break to chat and share ideas,
-            we always have a good time.
+            we&apos;re coding up a storm or taking a break to chat and share
+            ideas, we always have a good time.
           </motion.p>
           <div className="max-lg:hidden">
             <Floating

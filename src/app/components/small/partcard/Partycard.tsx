@@ -7,7 +7,6 @@ interface PartyCardProps {
   catg: string;
   image: string;
   color?: string;
-  y?: any;
   index?: number;
 }
 
@@ -16,10 +15,9 @@ const PartyCard = ({
   catg,
   image,
   color = "#bfff0a",
-  y,
 }: PartyCardProps) => {
   return (
-    <motion.div style={{ y: y }}>
+    <motion.div>
       <div>
         <Image
           src={image}
