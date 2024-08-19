@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-interface partyType {
+interface PartyCardProps {
   title: string;
   catg: string;
   image: string;
@@ -11,9 +11,13 @@ interface partyType {
   index?: number;
 }
 
-const Partycard = ({ title, catg, image, color = "#bfff0a", y }: partyType) => {
-  console.log(y);
-
+const PartyCard = ({
+  title,
+  catg,
+  image,
+  color = "#bfff0a",
+  y,
+}: PartyCardProps) => {
   return (
     <motion.div style={{ y: y }}>
       <div>
@@ -21,9 +25,12 @@ const Partycard = ({ title, catg, image, color = "#bfff0a", y }: partyType) => {
           src={image}
           width={350}
           height={500}
-          alt="title"
+          alt={title}
           loading="lazy"
           className="pointer-events-none"
+          objectFit="cover" // Correct value for objectFit
+          objectPosition="center" // Correct value for objectPosition
+          layout="intrinsic" // Correct value for layout
         />
         <div className="text-white uppercase">
           <h1
@@ -39,4 +46,4 @@ const Partycard = ({ title, catg, image, color = "#bfff0a", y }: partyType) => {
   );
 };
 
-export default Partycard;
+export default PartyCard;

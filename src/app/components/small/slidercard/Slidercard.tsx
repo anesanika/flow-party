@@ -2,10 +2,26 @@ import React from "react";
 import style from "./Slidercard.module.css";
 import Image from "next/image";
 
-const Slidercard = ({ title, name, date, category, image, bg }: any) => {
+interface SliderCardProps {
+  title: string;
+  name: string;
+  date: string;
+  category: string;
+  image: string;
+  bg: string;
+}
+
+const Slidercard = ({
+  title,
+  name,
+  date,
+  category,
+  image,
+  bg,
+}: SliderCardProps) => {
   return (
     <div
-      className={`${style.cardCont} flex flex-col justify-between w-[38,33333%] h-[700px] max-md:h-[500px]`}
+      className={`${style.cardCont} flex flex-col justify-between w-[38.33333%] h-[700px] max-md:h-[500px] relative`} // Added relative positioning for the Image component
       style={{ backgroundColor: bg }}
     >
       <div className="flex w-full justify-between p-2 px-4 z-20">
@@ -25,7 +41,9 @@ const Slidercard = ({ title, name, date, category, image, bg }: any) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="relative w-full h-full">
+        {" "}
+        {/* Added relative positioning */}
         <Image
           src={image}
           layout="fill"

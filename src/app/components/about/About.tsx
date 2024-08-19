@@ -42,7 +42,7 @@ const About = () => {
             <Floating
               src="https://assets.website-files.com/63cabfe6113ebc7aed6c0258/63cabfe6113ebcb7ce6c0293_render_02%2520(1)-p-800.png"
               width={250}
-              ref={ref}
+              refs={ref}
               top="0"
               right="200px"
             />
@@ -72,7 +72,7 @@ const About = () => {
             <Floating
               src="https://assets.website-files.com/63cabfe6113ebc7aed6c0258/63cabfe6113ebcbe876c028c_render_02b%2520(2)-p-800.png"
               width={400}
-              ref={ref}
+              refs={ref}
               left="0"
               bottom="30%"
             />

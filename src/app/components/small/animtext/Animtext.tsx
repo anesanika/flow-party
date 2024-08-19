@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-interface AnimtextType {
+interface animtextTyle {
   text: string;
   refs: any;
   color?: string;
-  size?: string; // Expecting a responsive size like "10vw" or "5rem"
+  size?: string;
   lineHeaight?: number;
 }
 
@@ -13,9 +13,9 @@ const Animtext = ({
   text,
   refs,
   color = "white",
-  size = "15vw", // Default size is now in vw for responsiveness
+  size = "15rem",
   lineHeaight = 0.9,
-}: AnimtextType) => {
+}: animtextTyle) => {
   const isInView = useInView(refs, { once: true });
 
   const controls = useAnimation();
@@ -24,16 +24,12 @@ const Animtext = ({
     if (isInView) {
       controls.start("visable");
     }
-  }, [isInView, controls]);
+  }, [isInView]);
 
   return (
     <h1
-      style={{
-        color: color,
-        fontSize: size,
-        lineHeight: lineHeaight,
-      }}
-      className={`overflow-hidden whitespace-nowrap font-[humanBold] uppercase`}
+      style={{ color: color, fontSize: size, lineHeight: lineHeaight }}
+      className={`overflow-hidden whitespace-nowrap font-[humanBold] max-h-[255px] uppercase }`}
     >
       {text.split("").map((letter, index) => (
         <motion.span

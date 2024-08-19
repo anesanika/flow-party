@@ -25,7 +25,6 @@ const Party = () => {
           </div>
           <div className="flex justify-center items-center gap-10 py-10 flex-wrap">
             {partycards.map((item, index) => {
-              // Modify y value based on the index
               const yLinear = useTransform(
                 scrollYProgress,
                 [0, 1],
