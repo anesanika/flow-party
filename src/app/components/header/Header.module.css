@@ -1,0 +1,78 @@
+.svgHheadCont {
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.svgHheadCont svg {
+  width: 600px !important;
+  opacity: 0.7;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 2s ease-in-out forwards;
+  animation-delay: 2000ms;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svgHheadCont svg:last-child {
+  rotate: 90deg;
+  transform: translate(-100px, -100px) !important;
+}
+
+@media (max-width: 1500px) {
+  .headerText {
+    font-size: 50rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .svgHheadCont {
+    width: 100%;
+  }
+  .svgHheadCont svg {
+    width: 400px !important;
+  }
+  .svgHheadCont svg:last-child {
+    rotate: 90deg;
+    transform: translate(-100px, -50px) !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .svgHheadCont svg:last-child {
+    transform: translate(-400px, -16%) !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .headerText {
+    font-size: 40rem;
+  }
+  .headerBottomText {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerText {
+    display: none;
+  }
+  .svgHheadCont svg:first-child {
+    transform: translateY(200px) rotate(-40deg) !important;
+  }
+  .svgHheadCont svg:last-child {
+    transform: translate(-300px, -16%) !important;
+  }
+  .headerBottomText {
+    font-size: 1rem;
+  }
+  .headerBottomText span {
+    font-size: 1.3rem;
+  }
+}

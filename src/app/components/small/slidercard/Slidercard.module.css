@@ -1,0 +1,17 @@
+.cardCatgCont span,
+.bottomArrow span {
+  transition: 0.2s ease-in-out;
+}
+.cardCont:hover .iamgeCont {
+  scale: 0.9;
+}
+.cardCont:hover .cardCatgCont span {
+  transform: translateY(-24px);
+}
+
+.cardCont:hover .bottomArrow span:nth-child(1) {
+  transform: translate(50px, -40px);
+}
+.cardCont:hover .bottomArrow span:nth-child(2) {
+  transform: translateY(-73px);
+}

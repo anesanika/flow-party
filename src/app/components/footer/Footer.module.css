@@ -1,0 +1,10 @@
+.footerText {
+  margin-top: 100px;
+}
+.footerText svg {
+  width: 60%;
+  height: 60%;
+}
+.footerText svg path {
+  fill: white;
+}
